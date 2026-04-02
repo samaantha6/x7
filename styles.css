@@ -1,0 +1,159 @@
+:root {
+  --bg: #0a0a0c;
+  --card-bg: #16161a;
+  --accent: #00ff88;
+  --text: #ffffff;
+  --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  padding-bottom: 50px;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  gap: 20px;
+  background: rgba(10, 10, 12, 0.8);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.search-container {
+  position: relative;
+}
+
+#search {
+  background: var(--glass);
+  border: 1px solid #333;
+  color: white;
+  padding: 12px 20px 12px 45px;
+  border-radius: 12px;
+  width: 300px;
+  transition: 0.3s;
+}
+
+#search:focus {
+  border-color: var(--accent);
+  outline: none;
+  background: rgba(255,255,255,0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  gap: 10px;
+  padding: 10px 5%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.filters::-webkit-scrollbar { display: none; }
+
+.filter-btn {
+  background: var(--glass);
+  border: 1px solid #333;
+  color: #ccc;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  font-weight: bold;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 20px 5%;
+}
+
+.channel-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #222;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+}
+
+.channel-card:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+}
+
+.img-container {
+  height: 120px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  position: relative;
+}
+
+.img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Badge de Calidad (1080p/720p) */
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.8);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.info {
+  padding: 15px;
+  background: linear-gradient(to bottom, #1a1a1e, #16161a);
+}
+
+.info h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #eee;
+}
+
+.info span {
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
